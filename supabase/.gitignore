@@ -1,0 +1,6 @@
+# Supabase - archivos temporales de la CLI (no versionar)
+.branches
+.temp
+
+# Variables de entorno
+.env
