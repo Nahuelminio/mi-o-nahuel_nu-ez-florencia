@@ -29,7 +29,31 @@ export default {
 };
 </script>
 <template>
+  <div class="max-w-2xl mx-auto">
   <BaseH1>Últimas opiniones</BaseH1>
+  <section v-if="user.id" class="mb-8 p-6 bg-white rounded-xl shadow-sm border border-neutral-200">
+    <h2 class="mb-4 text-lg font-semibold">Compartí tu opinión</h2>
+    <form action="#" @submit.prevent="handleCreatePost">
+      <div class="mb-4">
+        <label class="block mb-2 text-sm font-medium text-neutral-700" for="body">¿Qué reloj querés comentar?</label>
+        <textarea
+          id="body"
+          class="w-full min-h-24 resize-y rounded-lg border border-neutral-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:border-neutral-900"
+          placeholder="Escribí tu opinión sobre un reloj"
+          v-model="newPost.body"
+        ></textarea>
+      </div>
+      <div class="flex justify-end">
+      <button
+        class="rounded-lg bg-neutral-900 px-5 py-2 font-semibold text-white hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:ring-offset-2 transition-colors"
+        type="submit"
+      >
+        Opinar
+       
+      </button>
+       </div>
+    </form>
+  </section>
 
   <section>
     <h2 class="sr-only">Opiniones sobre relojes</h2>
@@ -43,25 +67,5 @@ export default {
       </li>
     </ol>
   </section>
-
-  <section v-if="user.id" class="mt-6">
-    <h2 class="mb-4">Compartí tu opinión</h2>
-    <form action="#" @submit.prevent="handleCreatePost">
-      <div class="mb-4">
-        <label class="block mb-1" for="body">¿Qué reloj querés comentar?</label>
-        <textarea
-          id="body"
-          class="border rounded p-2 w-full"
-          placeholder="Escribí tu opinión sobre un reloj"
-          v-model="newPost.body"
-        ></textarea>
-      </div>
-      <button
-        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-        type="submit"
-      >
-        Opinar
-      </button>
-    </form>
-  </section>
+  </div>
 </template>

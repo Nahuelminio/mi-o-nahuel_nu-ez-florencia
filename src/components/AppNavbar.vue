@@ -21,18 +21,19 @@ export default {
 };
 </script>
 <template>
-  <nav class="flex items-center h-15 bg-slate-600 text-white gap-8 p-4">
-    <RouterLink to="/" class="text-xl font-bold tracking-widest">ORVEN</RouterLink>
-    <ul class="flex gap-4">
+  <header>
+  <nav aria-label="Navegación Principal" class="flex items-center gap-8 h-15 px-6 bg-neutral-900 text-white">
+    <RouterLink to="/" class="text-xl font-bold tracking-[0.3em]">ORVEN</RouterLink>
+    <ul class="flex items-center gap-6 text-sm">
       <li class="">
-        <RouterLink class="" to="/">Inicio</RouterLink>
+        <RouterLink class="text-neutral-300 hover:text-white transition-colors" to="/">Inicio</RouterLink>
       </li>
       <template v-if="user.id !== null">
         <li class="">
-          <RouterLink class="" to="/chat">Chat</RouterLink>
+          <RouterLink class="text-neutral-300 hover:text-white transition-colors" to="/chat">Chat</RouterLink>
         </li>
         <li class="">
-          <RouterLink class="" to="/mi-perfil">Mi perfil</RouterLink>
+          <RouterLink class="text-neutral-300 hover:text-white transition-colors" to="/mi-perfil">Mi perfil</RouterLink>
         </li>
         <li class="">
           <form action="#" @submit.prevent="handleLogout">
@@ -44,12 +45,13 @@ export default {
       </template>
       <template v-else>
         <li class="">
-          <RouterLink class="" to="/ingresar">Ingresar</RouterLink>
+          <RouterLink class="text-neutral-300 hover:text-white transition-colors" to="/ingresar">Ingresar</RouterLink>
         </li>
         <li class="">
-          <RouterLink class="" to="/crear-cuenta">Crear cuenta</RouterLink>
+          <RouterLink class="text-neutral-300 hover:text-white transition-colors" to="/crear-cuenta">Crear cuenta</RouterLink>
         </li>
       </template>
     </ul>
   </nav>
+  </header>
 </template>

@@ -48,7 +48,7 @@ export default {
 };
 </script>
 <template>
-  <BaseH1>Public Chat</BaseH1>
+  <BaseH1>Chat Publico</BaseH1>
 
   <div class="flex gap-4">
     <section class="w-3/4 border rounded p-4 min-h-100">
