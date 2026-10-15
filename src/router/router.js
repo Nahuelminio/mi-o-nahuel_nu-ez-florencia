@@ -29,7 +29,7 @@ const routes = [
     path: "/mi-perfil",
     component: MyProfile,
     meta: { requiresAuth: true },
-  }
+  },
 ];
 
 const router = createRouter({
@@ -47,6 +47,6 @@ router.beforeEach((to, from) => {
   if (to.meta.requiresAuth && user.id === null) {
     return { path: "/ingresar" };
   }
-})
+});
 
 export default router;

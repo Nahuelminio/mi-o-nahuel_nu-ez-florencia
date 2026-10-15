@@ -15,13 +15,11 @@ export async function register(email, password, display_name) {
     throw new Error(error.message);
   }
 
-  const { error: errorProfile } = await supabase
-    .from("user_profiles")
-    .insert({
-      id: data.user.id,
-      email,
-      display_name,
-    });
+  const { error: errorProfile } = await supabase.from("user_profiles").insert({
+    id: data.user.id,
+    email,
+    display_name,
+  });
   if (errorProfile) {
     console.error("Error creando perfil de usuario:", errorProfile.message);
     throw new Error(errorProfile.message);

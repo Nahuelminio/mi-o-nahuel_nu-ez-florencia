@@ -31,19 +31,16 @@ export async function getLastPublicChatMesagges() {
 }
 
 /**
- * 
- * @param {(newMessage: {id: number, email: string, body: string, created_at: string}) => void} callback 
+ *
+ * @param {(newMessage: {id: number, email: string, body: string, created_at: string}) => void} callback
  */
 
 export function subscribeToPublicChatNewMessages(callback) {
   const chatChannel = supabase.channel("public_chat_channel");
   chatChannel.on(
     "postgres_changes",
-    { event: "INSERT", 
-      schema: "public", 
-      table: "public_chat"
-    },
-    payload => {
+    { event: "INSERT", schema: "public", table: "public_chat" },
+    (payload) => {
       callback(payload.new);
     },
   );

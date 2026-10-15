@@ -9,10 +9,10 @@ export default {
   },
   data() {
     return {
-        user: {
-          email: "",
-          password: "",
-          display_name: "",
+      user: {
+        email: "",
+        password: "",
+        display_name: "",
       },
       loading: false,
       errorMessage: "",
@@ -38,49 +38,50 @@ export default {
 };
 </script>
 <template>
-  
-  <section class="max-w-md mx-auto mt-10 p-8 bg-white rounded-xl shadow-2xl border border-neutral-200">
-  <BaseH1>Crear cuenta</BaseH1>
-  <p v-if="errorMessage" class="mb-4 text-sm text-red-600" role="alert">
-    {{ errorMessage }}
-  </p>
-  <form action="#" @submit.prevent="handleSubmit">
-    <div class="mb-4">
-      <label class="block mb-1" for="email">Email</label>
-      <input
-        type="email"
-        id="email"
-        placeholder="Escribe tu email"
-        class="w-full rounded-lg border border-neutral-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:border-neutral-900"
-        v-model="user.email"
-      />
-    </div>
-    <div class="mb-4">
-      <label class="block mb-1" for="display_name">Nombre</label>
-      <input
-        type="text"
-        id="display_name"
-        placeholder="Tu nombre"
-        class="w-full rounded-lg border border-neutral-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:border-neutral-900"
-        v-model="user.display_name"
-      />
-    </div>
-    <div class="mb-4">
-      <label class="block mb-1" for="password">Contraseña</label>
-      <input
-        type="password"
-        id="password"
-        placeholder="Escribe tu password"
-        class="w-full rounded-lg border border-neutral-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:border-neutral-900"
-        v-model="user.password"
-      />
-    </div>
-    <button
-      class="w-full rounded-lg bg-neutral-900 px-4 py-2 font-semibold text-white hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:ring-offset-2 transition-colors"
-      type="submit"
-    >
-      Crear cuenta
-    </button>
-  </form>
+  <section
+    class="max-w-md mx-auto mt-10 p-8 bg-white rounded-xl shadow-2xl border border-neutral-200"
+  >
+    <BaseH1>Crear cuenta</BaseH1>
+    <p v-if="errorMessage" class="mb-4 text-sm text-red-600" role="alert">
+      {{ errorMessage }}
+    </p>
+    <form action="#" @submit.prevent="handleSubmit">
+      <div class="mb-4">
+        <label class="block mb-1" for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="Escribe tu email"
+          class="w-full rounded-lg border border-neutral-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:border-neutral-900"
+          v-model="user.email"
+        />
+      </div>
+      <div class="mb-4">
+        <label class="block mb-1" for="display_name">Nombre</label>
+        <input
+          type="text"
+          id="display_name"
+          placeholder="Tu nombre"
+          class="w-full rounded-lg border border-neutral-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:border-neutral-900"
+          v-model="user.display_name"
+        />
+      </div>
+      <div class="mb-4">
+        <label class="block mb-1" for="password">Contraseña</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="Escribe tu password"
+          class="w-full rounded-lg border border-neutral-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:border-neutral-900"
+          v-model="user.password"
+        />
+      </div>
+      <button
+        class="w-full rounded-lg bg-neutral-900 px-4 py-2 font-semibold text-white hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:ring-offset-2 transition-colors"
+        type="submit"
+      >
+        Crear cuenta
+      </button>
+    </form>
   </section>
 </template>
