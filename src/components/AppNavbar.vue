@@ -33,12 +33,12 @@ export default {
           <RouterLink class="text-neutral-300 hover:text-white transition-colors" to="/chat">Chat</RouterLink>
         </li>
         <li class="">
-          <RouterLink class="text-neutral-300 hover:text-white transition-colors" to="/mi-perfil">Mi perfil</RouterLink>
+          <RouterLink class="text-neutral-300 hover:text-white transition-colors" to="/mi-perfil">{{ user.display_name }} (Mi perfil)</RouterLink>
         </li>
         <li class="">
           <form action="#" @submit.prevent="handleLogout">
             <button type="submit" >
-             {{ user.email }} (Cerrar sesión)
+             Cerrar sesión
             </button>
           </form>
         </li>

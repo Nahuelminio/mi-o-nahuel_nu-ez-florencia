@@ -15,10 +15,12 @@ export default {
           display_name: "",
       },
       loading: false,
+      errorMessage: "",
     };
   },
   methods: {
     async handleSubmit() {
+      this.errorMessage = "";
       try {
         this.loading = true;
         await register(
@@ -26,12 +28,9 @@ export default {
           this.user.password,
           this.user.display_name,
         );
-        alert(
-          "Usuario creado correctamente. Revisa tu correo para verificar tu cuenta.",
-        );
-        this.$router.push("/chat");
+        this.$router.push("/");
       } catch (error) {
-        alert(error.message);
+        this.errorMessage = error.message;
       }
       this.loading = false;
     },
@@ -41,6 +40,9 @@ export default {
 <template>
   <section class="max-w-md mx-auto mt-10 p-8 bg-white rounded-xl shadow-lg border border-neutral-200">
   <BaseH1>Crear cuenta</BaseH1>
+  <p v-if="errorMessage" class="mb-4 text-sm text-red-600" role="alert">
+    {{ errorMessage }}
+  </p>
   <form action="#" @submit.prevent="handleSubmit">
     <div class="mb-4">
       <label class="block mb-1" for="email">Email</label>
