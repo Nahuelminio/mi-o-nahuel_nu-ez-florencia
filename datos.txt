@@ -1,0 +1,17 @@
+Carrera:Diseño y Desarrollo web
+
+Materia: Clientes web Mobile
+
+Cuatrimestre: Cuarto Cuatrimestre
+
+Año:2026
+
+Turno:Mañana
+
+Comision: DWM4AV
+
+Apellidos y Nombres: Miño Nahuel, Nuñez Florencia
+
+Docente:Gallino Santiago
+
+Caracter de entrega: Primer Parcial

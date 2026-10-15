@@ -34,8 +34,9 @@ export default {
 </script>
 
 <template>
-  <section class="max-w-md mx-auto mt-10 p-8 bg-white rounded-xl shadow-lg border border-neutral-200">
-  <BaseH1>Iniciar Sesion</BaseH1>
+  
+  <section class="max-w-md mx-auto mt-10  p-8 bg-white rounded-xl shadow-2xl border border-neutral-200">
+  <BaseH1>Iniciar sesion</BaseH1>
   <p v-if="errorMessage" class="mb-4 text-sm text-red-600" role="alert">
     {{ errorMessage }}
   </p>
@@ -46,7 +47,7 @@ export default {
         type="email"
         id="email"
         placeholder="Escribe tu email"
-        class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        class="w-full rounded-lg border border-neutral-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:border-neutral-900"
         v-model="user.email"
       />
     </div>
@@ -67,4 +68,5 @@ export default {
     </button>
   </form>
   </section>
+
 </template>

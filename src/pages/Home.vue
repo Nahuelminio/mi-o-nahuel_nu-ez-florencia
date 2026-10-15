@@ -30,7 +30,7 @@ export default {
 </script>
 <template>
   <div class="max-w-2xl mx-auto">
-  <BaseH1>Últimas opiniones</BaseH1>
+  <BaseH1 class="text-white">Últimas opiniones</BaseH1>
   <section v-if="user.id" class="mb-8 p-6 bg-white rounded-xl shadow-sm border border-neutral-200">
     <h2 class="mb-4 text-lg font-semibold">Compartí tu opinión</h2>
     <form action="#" @submit.prevent="handleCreatePost">
@@ -58,8 +58,8 @@ export default {
   <section>
     <h2 class="sr-only">Opiniones sobre relojes</h2>
     <ol>
-      <li v-for="post in posts" :key="post.id" class="mb-4 border-b pb-2">
-        <p class="text-sm text-gray-500">
+      <li v-for="post in posts" :key="post.id" class="mb-4 p-6 bg-white rounded-xl shadow-sm border border-neutral-200">
+        <p class="text-sm text-neutral-500">
           {{ post.user_profiles?.display_name ?? "Anónimo" }} —
           {{ new Date(post.created_at).toLocaleString() }}
         </p>

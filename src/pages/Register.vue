@@ -38,7 +38,8 @@ export default {
 };
 </script>
 <template>
-  <section class="max-w-md mx-auto mt-10 p-8 bg-white rounded-xl shadow-lg border border-neutral-200">
+  
+  <section class="max-w-md mx-auto mt-10 p-8 bg-white rounded-xl shadow-2xl border border-neutral-200">
   <BaseH1>Crear cuenta</BaseH1>
   <p v-if="errorMessage" class="mb-4 text-sm text-red-600" role="alert">
     {{ errorMessage }}
