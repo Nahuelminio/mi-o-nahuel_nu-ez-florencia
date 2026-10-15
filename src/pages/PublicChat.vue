@@ -37,7 +37,6 @@ export default {
   async mounted() {
     try {
       this.messages = await getLastPublicChatMesagges();
-      console.log(this.messages);
       subscribeToPublicChatNewMessages((receivedMessage) =>
         this.messages.push(receivedMessage),
       );

@@ -7,7 +7,7 @@ export async function getPosts() {
   const { data, error } = await supabase
     .from("posts")
     .select("*, user_profiles(display_name)")
-    .order("created_at", { ascending: false }); // más nuevos primero
+    .order("created_at", { ascending: false }); 
   if (error) {
     console.error("Error al traer las publicaciones:", error.message);
     throw new Error(error.message);

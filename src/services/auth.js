@@ -44,7 +44,6 @@ export async function login(email, password) {
     console.error("Error iniciando sesión:", error.message);
     throw new Error(error.message);
   }
-  console.log("Usuario logueado:", data);
   return data;
 }
 
@@ -54,7 +53,6 @@ export async function logout() {
     console.error("Error cerrando sesión:", error.message);
     throw new Error(error.message);
   }
-  console.log("Usuario deslogueado");
 }
 
 let userData = {

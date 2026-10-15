@@ -44,7 +44,6 @@ export function subscribeToPublicChatNewMessages(callback) {
       table: "public_chat"
     },
     payload => {
-      console.log("Nuevo mensaje en el chat público:", payload.new);
       callback(payload.new);
     },
   );
