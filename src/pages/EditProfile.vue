@@ -60,10 +60,12 @@ export default {
 </script>
 
 <template>
+  <div class="max-w-2xl mx-auto">
   <BaseH1 class="text-white">Editar perfil</BaseH1>
-  <form action="#" @submit.prevent="handleSubmit">
+  <h2 class="mb-4 text-xl font-semibold text-white">Datos personales</h2>
+  <form action="#" @submit.prevent="handleSubmit" class="p-8 bg-white rounded-xl shadow-sm border border-neutral-200">
     <div class="mb-4">
-      <label class="block mb-1" for="display_name">Nombre de pantalla</label>
+      <label class="block mb-2 text-sm font-medium text-neutral-700" for="display_name">Nombre de pantalla</label>
       <input
         type="text"
         id="display_name"
@@ -73,7 +75,7 @@ export default {
       />
     </div>
     <div class="mb-4">
-      <label class="block mb-1" for="email">Email</label>
+      <label class="block mb-2 text-sm font-medium text-neutral-700" for="email">Email</label>
       <input
         type="email"
         id="email"
@@ -84,7 +86,7 @@ export default {
       />
     </div>
     <div class="mb-4">
-      <label class="block mb-1" for="bio">Biografía</label>
+      <label class="block mb-2 text-sm font-medium text-neutral-700" for="bio">Biografía</label>
       <textarea
         id="bio"
         rows="4"
@@ -95,7 +97,7 @@ export default {
     </div>
     <button
       type="submit"
-      class="rounded-lg bg-neutral-900 px-4 py-2 text-white hover:bg-neutral-800 disabled:opacity-50"
+      class="rounded-lg bg-neutral-900 px-5 py-2 font-semibold text-white hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:ring-offset-2 transition-colors disabled:opacity-50"
       :disabled="updating"
     >
       Guardar cambios
@@ -103,9 +105,9 @@ export default {
   </form>
 
   <h2 class="mt-8 mb-4 text-xl font-semibold text-white">Cambiar contraseña</h2>
-  <form action="#" @submit.prevent="handleUpdatePassword">
+  <form action="#" @submit.prevent="handleUpdatePassword" class="p-8 bg-white rounded-xl shadow-sm border border-neutral-200">
     <div class="mb-4">
-      <label class="block mb-1" for="password">Nueva contraseña</label>
+      <label class="block mb-2 text-sm font-medium text-neutral-700" for="password">Nueva contraseña</label>
       <input
         type="password"
         id="password"
@@ -118,10 +120,11 @@ export default {
     </div>
     <button
       type="submit"
-      class="rounded-lg bg-neutral-900 px-4 py-2 text-white hover:bg-neutral-800 disabled:opacity-50"
+      class="rounded-lg bg-neutral-900 px-5 py-2 font-semibold text-white hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:ring-offset-2 transition-colors disabled:opacity-50"
       :disabled="updatingPassword"
     >
       Actualizar contraseña
     </button>
   </form>
+  </div>
 </template>

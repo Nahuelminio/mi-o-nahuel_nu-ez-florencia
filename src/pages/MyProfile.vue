@@ -23,17 +23,18 @@ export default {
 };
 </script>
 <template>
-  <div class="flex gap-4">
-    <BaseH1 class="text-white">Mi perfil</BaseH1>
-    <RouterLink to="/mi-perfil/editar" class="text-white underline"
-      >Editar</RouterLink
-    >
-    <RouterLink to="/mi-perfil/editar/foto" class="text-white underline"
-      >Cambiar foto</RouterLink
-    >
+  <div class="max-w-2xl mx-auto">
+    <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+    <BaseH1 class="text-white !mb-0">Mi perfil</BaseH1>
+    <div class="flex gap-2">
+    <RouterLink to="/mi-perfil/editar" class="rounded-lg bg-white px-4 py-2 text-sm font-semibold text-neutral-900 hover:bg-neutral-200 transition-colors"
+      >Editar</RouterLink>
+    <RouterLink to="/mi-perfil/editar/foto" class="rounded-lg border border-white/40 px-4 py-2 text-sm font-semibold text-white hover:bg-white/10 transition-colors"
+      >Cambiar foto</RouterLink>
+  </div>
   </div>
   <section
-    class="max-w-2xl mx-auto p-8 bg-white rounded-xl shadow-sm border border-neutral-200"
+    class=" mt-6 max-w-2xl mx-auto p-8 bg-white rounded-xl shadow-sm border border-neutral-200"
   >
     <div class="flex items-center gap-4">
       <img
@@ -57,4 +58,5 @@ export default {
       </div>
     </div>
   </section>
+  </div>
 </template>
