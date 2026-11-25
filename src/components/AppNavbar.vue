@@ -33,7 +33,22 @@ export default {
           <RouterLink class="text-neutral-300 hover:text-white transition-colors" to="/chat">Chat</RouterLink>
         </li>
         <li>
-          <RouterLink class="text-neutral-300 hover:text-white transition-colors" to="/mi-perfil">{{ user.display_name }} (Mi perfil)</RouterLink>
+          <RouterLink class="flex items-center gap-2 text-neutral-300 hover:text-white transition-colors" to="/mi-perfil">
+            <img
+              v-if="user.photo_url"
+              :src="user.photo_url"
+              alt="Foto de perfil"
+              class="size-8 rounded-full object-cover"
+            />
+            <span
+              v-else
+              aria-hidden="true"
+              class="flex items-center justify-center size-8 rounded-full bg-neutral-700 text-sm font-semibold uppercase"
+            >
+              {{ user.display_name?.charAt(0) ?? "?" }}
+            </span>
+            {{ user.display_name }} (Mi perfil)
+          </RouterLink>
         </li>
         <li >
           <form action="#" @submit.prevent="handleLogout">

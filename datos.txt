@@ -14,4 +14,4 @@ Apellidos y Nombres: Miño Nahuel, Nuñez Florencia
 
 Docente:Gallino Santiago
 
-Caracter de entrega: Primer Parcial
+Caracter de entrega: Segundo Parcial

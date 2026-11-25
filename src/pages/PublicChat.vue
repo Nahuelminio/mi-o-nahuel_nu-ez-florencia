@@ -5,7 +5,9 @@ import {
   sendPublicChatMessage,
   subscribeToPublicChatNewMessages,
 } from "../services/public-chat.js";
+import { subscribeToAuthChanges } from "../services/auth.js";
 
+let unsubscribeFromChat = () => {};
 export default {
   name: "PublicChat",
   components: {
@@ -18,12 +20,19 @@ export default {
         email: "",
         body: "",
       },
+      user: {
+        id: null,
+        email: null,
+        bio: null,
+        display_name: null,
+      }
     };
   },
   methods: {
     async handleMessageSend() {
       try {
         sendPublicChatMessage({
+          seder_id: this.user.id,
           email: this.newMessage.email,
           body: this.newMessage.body,
         });
@@ -35,13 +44,17 @@ export default {
   },
   async mounted() {
     try {
+      subscribeToAuthChanges(userData => this.user = userData);
       this.messages = await getLastPublicChatMesagges();
-      subscribeToPublicChatNewMessages((receivedMessage) =>
+      unsubscribeFromChat = subscribeToPublicChatNewMessages((receivedMessage) =>
         this.messages.push(receivedMessage),
       );
     } catch (error) {
       console.error("Error al traer los mensajes del chat", error);
     }
+  },
+  unmounted() {
+    unsubscribeFromChat();
   },
 };
 </script>
@@ -60,6 +73,9 @@ export default {
           class="mb-3 p-3 rounded-lg bg-neutral-100"
         >
           <p class="mb-1 text-xs text-neutral-500">
+            <RouterLink :to="`/usuario/${message.sender_id}`" class="text-neutral-900 font-semibold hover:underline">
+              {{ message.display_name ?? "Usuario desconocido" }}
+            </RouterLink>
             {{ message.email }} -
             {{ new Date(message.created_at).toLocaleString() }}
           </p>

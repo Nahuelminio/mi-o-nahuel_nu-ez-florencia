@@ -5,10 +5,11 @@ import { supabase } from "./supabase";
  * @param {{email: string, body: string}} data
  */
 
-export async function sendPublicChatMessage({ email, body }) {
+export async function sendPublicChatMessage({ email, body, seder_id }) {
   const { error } = await supabase.from("public_chat").insert({
     email,
     body,
+    seder_id,
   });
 
   if (error) {
@@ -45,4 +46,11 @@ export function subscribeToPublicChatNewMessages(callback) {
     },
   );
   chatChannel.subscribe();
+  console.log("Subscripcion al canal de chat público abierta");
+
+  return () => {
+    chatChannel.unsubscribe();
+      console.log("Subscripcion al canal de chat público abierta");
+
+  };
 }

@@ -17,4 +17,4 @@ create policy "Insercion de posts propios"
   on public.posts
   for insert
   to authenticated
-  with check (auth.uid() = user_id);
+  with check (user_id = (select auth.uid()));

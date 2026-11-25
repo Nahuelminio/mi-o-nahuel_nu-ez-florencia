@@ -18,4 +18,4 @@ create policy "Insercion de perfil propio"
   on public.user_profiles
   for insert
   to authenticated
-  with check (auth.uid() = id);
+  with check (id = (select auth.uid()));
